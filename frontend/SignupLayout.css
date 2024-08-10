@@ -1,0 +1,111 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.main{
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+
+.title{
+	color: #000000;
+	font-size: 30px;
+	font-family: Arial;
+	padding-left: 20px;
+	float: left;
+    padding-top: 14px;
+}
+
+.menu{
+	float: left;
+	height: 70px;
+	padding-top: 42px;
+}
+
+ul{
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ul li{
+	list-style: none;
+	margin-left: 62px;
+	margin-right: 27px;
+	font-size: 24px;
+}
+
+ul li a{
+	text-decoration: none;
+	color: #000000;
+	font-family: Arial;
+	font-weight: bold;
+	transition:0.4s ease-in-out;
+}
+
+ul li a:hover{
+	color: #ffff8f;
+}
+
+.sign_up{
+	width: 640px;
+	height: 280px;
+	background: #ffffc7;
+	position: absolute;
+	position:center;
+	margin-top: 25vh;
+	margin-left: 70vh;
+	border-radius: 10px;
+	padding: 25px;
+}
+
+.sign_up h2{
+	width: 220px;
+	font-family: sans-serif;
+	text-align: left;
+	font-size: 30px;
+}
+
+.sign_up form .user-details{
+	display: flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+}
+
+form .user-details .input-box{
+	width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details{
+	display:block;
+	font-weight: 500;
+	margin-bottom: 3px;
+
+}
+.user-details .input-box input{
+	height: 35px;
+	width: 100%;
+	outline: none;
+}
+.main .btn{
+	width: 120px;
+	margin-right: 10px;
+	font-size: 18px;
+	cursor: pointer;
+	height: 60px;
+	background: #ffff8f;
+	border-radius: 10px;
+	border: #000000;
+	float:right;
+}
+
+.main .btn a{
+	text-decoration: none;
+	color: #000000;
+	transition: .3s ease;
+	float: center;
+}
