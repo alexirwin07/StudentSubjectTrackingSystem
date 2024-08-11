@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<title>Create an account - SSTD</title>
-	<link rel="stylesheet" type="text/css" href="SignupLayout.css">
+	<link rel="stylesheet" type="text/css" href="/static/SignupLayout.css">
 </head>
 <body>
 
@@ -14,9 +14,9 @@
 
 <div class="menu">
 <ul>
-	<li><a href="#">HOME</a></li>
-	<li><a href="#">SETTINGS</a></li>
-	<li><a href="#">ABOUT US</a></li>
+	<li><a href="http://localhost:5000/home/">HOME</a></li>
+	<li><a href="http://localhost:5000/settings/">SETTINGS</a></li>
+	<li><a href="http://localhost:5000/about-us/">ABOUT US</a></li>
 
 </ul>
 </div>
@@ -24,17 +24,18 @@
 <h2>Sign Up</h2>
 <form action="#">
 <div class="user-details">
+<form method = 'POST' action = '/register'>
 <div class="input-box">
 	<span class="details">First Name:</span>
 	<input id = "name" type="name" placeholder="Enter your first name" required>
 </div>
 <div class="input-box">
 	<span class="details">Surname:</span>
-	<input type="name" placeholder="Enter your surname" required>
+	<input id="surname" type="name" placeholder="Enter your surname" required>
 </div>
 <div class="input-box">
 	<span class="details">E-mail:</span>
-	<input type="email" placeholder="Enter your email" required>
+	<input id="email" placeholder="Enter your email" required>
 </div>
 <div class="input-box">
 	<span class="details">Password:</span>
@@ -42,8 +43,10 @@
 </div>
 <div class="input-box">
 	<span class="details">Confirm Password:</span>
-	<input id="password" type="text" minlength="8" placeholder="Confirm your password" required>
+	<input id="confirm_pass" type="text" minlength="8" placeholder="Confirm your password" required>
 </div>
 </div>
-	<button class="btn"><a href="file:///C:/Users/gilll/OneDrive/Documents/Alex/Computer%20Science/SSTS/Home.html">Create account</a></button>
+	<input class="btn" type="submit" value="Create account">
+</div>
+</form>
 </div>

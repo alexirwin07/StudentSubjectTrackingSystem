@@ -4,7 +4,7 @@ from backend.database import Base
 class Students(Base):
     __tablename__ = "students"
 
-    id = Column(Integer, primary_key=True, index=True)
+    student_id = Column(Integer, primary_key=True, index=True)
     email = Column(String)
     password = Column(String)
     surname = Column(String)
@@ -13,8 +13,14 @@ class Students(Base):
 class Grades(Base):
     __tablename__ = "grades"
 
-    grade_id= Column(Integer, primary_key=True, index=True)
-    id = Column(Integer, foreign_key=True, index=True)
-    subject= Column(String)
+    student_id = Column(Integer, foreign_key="student_id", index=True)
+    subject_id= Column(Integer, foreign_key="subject_id", index=True)
     grade= Column(String)
+
+class Subjects(Base):
+    __tablename__ ="subjects"
+
+    student_id= Column(Integer, foreign_key="student_id", index=True)
+    subject_id= Column(Integer, key=True, index=True)
+    subject= Column(String)
 

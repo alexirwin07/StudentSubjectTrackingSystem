@@ -62,8 +62,8 @@ ul li a:hover{
 
 .progress .records{
 	font-size:20px;
-	cursor:pointer;
 	background: #ffff8f;
+	text-align:center;
 	border-radius: 10px;
 	border: #000000;
 	width: 100%;
