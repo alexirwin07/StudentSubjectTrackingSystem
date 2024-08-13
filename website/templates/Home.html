@@ -1,21 +1,65 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
     %}
-    <h1 align="center">Notes</h1>
-    <ul class="list-group list-group-flush" id="notes">
-      {% for note in user.notes %}
-      <li class="list-group-item">
-        {{ note.data }}
-        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </li>
-      {% endfor %}
-    </ul>
+    <form method="GET">
+    <div class="progress border-dark">
+
+    </div>
+    </form>
     <form method="POST">
-      <textarea name="note" id="note" class="form-control"></textarea>
-      <br />
-      <div align="center">
-        <button type="submit" class="btn btn-primary">Add Note</button>
-      </div>
+    <div class="card border-dark">
+    <div>
+        <h3 align="center">Add Grades</h3>
+        <div class="form-group">
+            <label for="subject">Subject</label>
+        <input
+          type="subject"
+          class="form-inline"
+          id="subject"
+          name="subject"
+          placeholder="Enter subject"
+        />
+        </div>
+        <div class="form-group">
+            <label for="grade">Grade</label>
+        <input
+          type="grade"
+          class="form-inline"
+          id="grade"
+          name="grade"
+          placeholder="Enter grade"
+        />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Add Subject</button>
+    </div>
+    </div>
+    </form>
+    <form method="POST">
+    <div class="card border-dark">
+        <h3 align="center">Add Goals</h3>
+        <div class="goal">
+            <h2>This will be a goal</h2>
+            <button type="submit" class="btn btn-success">Completed</button>
+        </div>
+        <div class="goal">
+            <h2>This will be a goal</h2>
+            <button type="submit" class="btn btn-success">Completed</button>
+        </div>
+        <div class="goal">
+            <h2>This will be a goal</h2>
+            <button type="submit" class="btn btn-success">Completed</button>
+        </div>
+        <div class="form-group">
+            <label for="goal">Goal</label>
+        <input
+          type="goal"
+          class="form-inline"
+          id="goal"
+          name="goal"
+          placeholder="Enter goal"
+        />
+        <br />
+        <button type="submit" class="btn btn-primary">Add Goal</button>
+    </div>
     </form>
     {% endblock %}
