@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block title %}Add Subjects/Grades{% endblock %} {% block content%}
+    <form method="POST">
+        <h3 align="center">Add Grades</h3>
+        <div class="form-group">
+            <label for="subject">Subject</label>
+        <input
+            type="subject"
+            class="form-control"
+            id="subject"
+            name="subject"
+            placeholder="Enter subject"
+        />
+        </div>
+        <div class="form-group">
+            <label for="grade">Grade</label>
+        <input
+            type="grade"
+            class="form-control"
+            id="grade"
+            name="grade"
+            placeholder="Enter grade"
+        />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Add Subject</button>
+        </form>
+        <br />
+        <p align="center"><em>If you want to just add a new subject fill in the subject column only and submit</em></p>
+        <br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Remove subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subject in user.subjects %}
+                <tr>
+                    <td>{{ subject.subject_name }}</td>
+                    <td>
+                    <button type="button float-center" class="close" onClick="deleteSubject({{ subject.id }})">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endblock %}

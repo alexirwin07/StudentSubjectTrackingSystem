@@ -1,65 +1,36 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
     %}
     <form method="GET">
-    <div class="progress border-dark">
-
-    </div>
-    </form>
-    <form method="POST">
-    <div class="card border-dark">
-    <div>
-        <h3 align="center">Add Grades</h3>
-        <div class="form-group">
-            <label for="subject">Subject</label>
-        <input
-          type="subject"
-          class="form-inline"
-          id="subject"
-          name="subject"
-          placeholder="Enter subject"
-        />
-        </div>
-        <div class="form-group">
-            <label for="grade">Grade</label>
-        <input
-          type="grade"
-          class="form-inline"
-          id="grade"
-          name="grade"
-          placeholder="Enter grade"
-        />
-        </div>
+        {% for subject in user.subjects %}
         <br />
-        <button type="submit" class="btn btn-primary">Add Subject</button>
-    </div>
-    </div>
+        <h2>{{ subject.subject_name }}</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Time of Grade</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Remove grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for grade in subject.grades %}
+                <tr>
+                    <td>{{ grade.date }}</td>
+                    <td>{{ grade.grade }}</td>
+                    <td>
+                    <button type="button float-center" class="close" onClick="deleteGrade({{ grade.id }})">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if {{ subject.grades[-1].feedback }} in subject.grades %}
+        <p class="lead"><em>{{ subject.grades[-1].feedback }}</em></p>
+        {% elif {{ subject.grades[-1].feedback }} not in subject.grades %}
+        <p></p>
+        {% endif %} #########################
+        {% endfor %}
     </form>
-    <form method="POST">
-    <div class="card border-dark">
-        <h3 align="center">Add Goals</h3>
-        <div class="goal">
-            <h2>This will be a goal</h2>
-            <button type="submit" class="btn btn-success">Completed</button>
-        </div>
-        <div class="goal">
-            <h2>This will be a goal</h2>
-            <button type="submit" class="btn btn-success">Completed</button>
-        </div>
-        <div class="goal">
-            <h2>This will be a goal</h2>
-            <button type="submit" class="btn btn-success">Completed</button>
-        </div>
-        <div class="form-group">
-            <label for="goal">Goal</label>
-        <input
-          type="goal"
-          class="form-inline"
-          id="goal"
-          name="goal"
-          placeholder="Enter goal"
-        />
-        <br />
-        <button type="submit" class="btn btn-primary">Add Goal</button>
-    </div>
-    </form>
-    {% endblock %}
+    {% endblock %}  
